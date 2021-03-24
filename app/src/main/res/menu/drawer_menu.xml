@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/studentProfile"
+            android:icon="@drawable/view_student"
+            android:title="Student Profile" />
+        <item
+            android:id="@+id/attendance"
+            android:icon="@drawable/attendance_icon"
+            android:title="Attendance" />
+        <item
+            android:id="@+id/onlineStudents"
+            android:icon="@drawable/online_students"
+            android:title="Online Students" />
+    </group>
+
+    <item android:title="Settings">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/setReminder"
+                    android:icon="@drawable/ic_serice"
+                    android:title="Set Reminder" />
+                <item
+                    android:id="@+id/aboutUs"
+                    android:icon="@drawable/ic_about_us"
+                    android:title="About Us" />
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Log Out" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
