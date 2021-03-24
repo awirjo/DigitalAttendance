@@ -84,7 +84,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 Intent intent2 = new Intent(DashboardActivity.this, AttendanceActivity.class);
                 startActivity(intent2);
                 break;
-            case R.id.onlineStudents:
+            case R.id.onlineRegistration:
                 Intent intent3 = new Intent(DashboardActivity.this, RestCall.class);
                 startActivity(intent3);
                 break;

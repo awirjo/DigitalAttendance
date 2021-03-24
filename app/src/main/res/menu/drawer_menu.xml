@@ -15,9 +15,9 @@
             android:icon="@drawable/attendance_icon"
             android:title="Attendance" />
         <item
-            android:id="@+id/onlineStudents"
+            android:id="@+id/onlineRegistration"
             android:icon="@drawable/online_students"
-            android:title="Online Students" />
+            android:title="Online Registration" />
     </group>
 
     <item android:title="Settings">
