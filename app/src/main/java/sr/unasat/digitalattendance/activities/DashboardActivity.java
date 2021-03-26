@@ -79,6 +79,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             case  R.id.studentProfile:
                 Intent intent1 = new Intent(DashboardActivity.this, StudentActivity.class);
                 startActivity(intent1);
+                Toast.makeText(DashboardActivity.this, "*Remember:  YOU CAN'T UPDATE FIRSTNAME, INSTEAD JUST DELETE*", Toast.LENGTH_LONG).show();
                 break;
             case R.id.attendance:
                 Intent intent2 = new Intent(DashboardActivity.this, AttendanceActivity.class);

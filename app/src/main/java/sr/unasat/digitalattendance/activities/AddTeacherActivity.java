@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ import sr.unasat.digitalattendance.entities.Teacher;
 public class AddTeacherActivity extends AppCompatActivity {
 
     Button registerButton;
+    Button cancelButton;
     EditText textFirstName;
     EditText textLastName;
     EditText textusername;
@@ -32,6 +34,7 @@ public class AddTeacherActivity extends AppCompatActivity {
     textusername= (EditText) findViewById(R.id.editTextUserName);
     textpassword= (EditText) findViewById(R.id.editTextPassword);
     registerButton= (Button) findViewById(R.id.RegisterButton);
+    cancelButton= (Button) findViewById(R.id.Cancel_Button);
 
 		registerButton.setOnClickListener(new View.OnClickListener() {
 
@@ -69,6 +72,14 @@ public class AddTeacherActivity extends AppCompatActivity {
 
         }
     });
+
+		cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddTeacherActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
