@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -63,12 +64,8 @@ public class StudentActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String studentNumberTXT = number.getText().toString();
-                Boolean checkudeletedata = db.deleteStudent(studentNumberTXT);
-                if(checkudeletedata==true)
-                    Toast.makeText(StudentActivity.this, "Student Deleted", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(StudentActivity.this, "Student not Deleted", Toast.LENGTH_SHORT).show();
+                deleteStudentAsync d = new deleteStudentAsync();
+                d.execute(10);
             }        });
 
         update.setOnClickListener(new View.OnClickListener() {
@@ -111,5 +108,23 @@ public class StudentActivity extends AppCompatActivity {
         });
     }
 
+    public class deleteStudentAsync extends AsyncTask<Integer, Void, Boolean> {
+        Boolean checkudeletedata;
+        EditText number = (EditText) findViewById(R.id.stdNumber);
+        @Override
+        protected Boolean doInBackground(Integer... integers) {
+            String studentNumberTXT = number.getText().toString();
+            checkudeletedata = db.deleteStudent(studentNumberTXT);
+            return checkudeletedata;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean checkudeletedata) {
+            if(checkudeletedata==true)
+                Toast.makeText(StudentActivity.this, "Student Deleted", Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(StudentActivity.this, "Student not Deleted", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }

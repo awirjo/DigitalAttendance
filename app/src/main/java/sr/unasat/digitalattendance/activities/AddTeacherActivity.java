@@ -66,7 +66,7 @@ public class AddTeacherActivity extends AppCompatActivity {
 
                 Intent intent =new Intent(AddTeacherActivity.this,MenuActivity.class);
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(), "Teacher added successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddTeacherActivity.this, "Teacher added successfully", Toast.LENGTH_SHORT).show();
 
             }
 

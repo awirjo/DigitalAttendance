@@ -15,19 +15,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalAttendance">
-        <activity android:name=".activities.ViewAttendanceActivity"/>
-        <activity android:name=".activities.AddAttendanceActivity" />
-        <activity android:name=".activities.AttendanceActivity" />
-        <activity android:name=".activities.StudentActivity" />
-        <activity android:name=".activities.DashboardActivity" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.MenuActivity"/>
-        <activity android:name=".activities.AddTeacherActivity"/>
-        <activity android:name=".activities.ViewTeachersActivity"/>
-        <activity android:name=".restApi.RestCall"/>
-        <activity android:name=".notificationService.NotificationActivity"/>
+        <activity android:name=".activities.ViewAttendanceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.AddAttendanceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.AttendanceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.StudentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.DashboardActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.MenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.AddTeacherActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ViewTeachersActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".restApi.RestCall"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".notificationService.NotificationActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
