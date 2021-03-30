@@ -43,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
                                        int arg2, long arg3) {
                 ((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
                 userrole = (String) spinnerloginas.getSelectedItem();
-
             }
 
             @Override
@@ -96,7 +95,6 @@ public class LoginActivity extends AppCompatActivity {
                     if (teacher != null) {
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         startActivity(intent);
-                        ((ApplicationContext) LoginActivity.this.getApplicationContext()).setTeacher(teacher);
                         Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();

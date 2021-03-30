@@ -12,15 +12,6 @@ public class ApplicationContext extends Application {
 
     private ArrayList<Student> studentList;
     private ArrayList<Attendance> attendanceList;
-    private Teacher teacher;
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
 
     public ArrayList<Student> getStudentList() {
         return studentList;
