@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import sr.unasat.digitalattendance.R;
-import sr.unasat.digitalattendance.context.ApplicationContext;
 import sr.unasat.digitalattendance.database.DtbHelper;
 import sr.unasat.digitalattendance.entities.Teacher;
 
@@ -39,9 +38,9 @@ public class LoginActivity extends AppCompatActivity {
 
         spinnerloginas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> arg0, View view,
-                                       int arg2, long arg3) {
-                ((TextView) arg0.getChildAt(0)).setTextColor(Color.BLACK);
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
                 userrole = (String) spinnerloginas.getSelectedItem();
             }
 

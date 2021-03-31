@@ -3,7 +3,6 @@ package sr.unasat.digitalattendance.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -27,8 +26,7 @@ public class AddAttendanceActivity extends AppCompatActivity {
     ArrayList<Student> studentList;
     private ListView listView;
     private ArrayAdapter<String> listAdapter;
-    String status = "P";
-    Button attendanceSubmit;
+    String status;
     DtbHelper db = new DtbHelper(this);
 
     @Override
@@ -47,29 +45,22 @@ public class AddAttendanceActivity extends AppCompatActivity {
             studentLists.add(students);
         }
 
-        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, R.layout.add_student_attendance, R.id.labelA, studentLists);
+        listAdapter = new ArrayAdapter<String>(this, R.layout.add_student_attendance, R.id.labelA, studentLists);
         listView.setAdapter(listAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                    long arg3) {
-
-                arg0.getChildAt(arg2).setBackgroundColor(Color.TRANSPARENT);
-                //arg0.setBackgroundColor(234567);
-                arg1.setBackgroundColor(334455);
-                final Student student = studentList.get(arg2);
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                final Student student = studentList.get(position);
                 final Dialog dialog = new Dialog(AddAttendanceActivity.this);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//...........
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.set_attendance_layout);
                 // set title and cancelable
-                RadioGroup radioGroup;
-                RadioButton present;
-                RadioButton absent;
-                radioGroup = (RadioGroup) dialog.findViewById(R.id.radioGroup);
-                present = (RadioButton) dialog.findViewById(R.id.PresentradioButton);
-                absent = (RadioButton) dialog.findViewById(R.id.AbsentradioButton);
+                RadioGroup radioGroup = (RadioGroup) dialog.findViewById(R.id.radioGroup);
+                RadioButton present = (RadioButton) dialog.findViewById(R.id.PresentradioButton);
+                RadioButton absent = (RadioButton) dialog.findViewById(R.id.AbsentradioButton);
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
                     @Override
@@ -80,7 +71,6 @@ public class AddAttendanceActivity extends AppCompatActivity {
                         } else if (checkedId == R.id.AbsentradioButton) {
 
                             status = "A";
-                        } else {
                         }
                     }
                 });
@@ -89,7 +79,7 @@ public class AddAttendanceActivity extends AppCompatActivity {
                 attendanceSubmit.setOnClickListener(new View.OnClickListener() {
 
                     @Override
-                    public void onClick(View arg0) {
+                    public void onClick(View view) {
                         Attendance attendance = new Attendance();
                         attendance.setAttendance_student_id(student.getStudent_id());
                         attendance.setAttendance_status(status);

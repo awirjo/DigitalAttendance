@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import sr.unasat.digitalattendance.entities.Attendance;
 import sr.unasat.digitalattendance.entities.Student;
-import sr.unasat.digitalattendance.entities.Teacher;
 
 public class ApplicationContext extends Application {
 
